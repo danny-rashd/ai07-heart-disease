@@ -1,0 +1,2 @@
+# ai07-heart-disease
+ This project was started as a motivation for me to utilize Machine Learning and Deep Learning algorithms and to implement the different data preprocessing techniques such as Exploratory Data Analysis, Feature Selection, Feature Scaling and to finally build a model using Tensorflow Keras.  In this project, I am going to predict whether a patient a heart disease or not based on the dataset I obtained from Kaggle.
