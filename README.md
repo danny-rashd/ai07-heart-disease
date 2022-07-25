@@ -4,7 +4,7 @@
 
 The aim of this project is to create a deep learning model to predict whether a patient has heart disease or not.
 
-The model is trained with [Heart Disease Dataset](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset) obtained from kaggle. The dataset consists of 2 classes which is 0 (no heart disease) or 1 (has heart disease).
+The model is trained with the [Heart Disease Dataset](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset) that was obtained from kaggle.
 
 ## 2. IDE and Framework
 
@@ -22,7 +22,7 @@ A feedforward neural network is constructed that is catered for classification p
 
 ![Model Structure](images/model_1.png)
 
-The model is trained with a batch size of 16 and for 50 epochs. Early stopping and dropout is applied in this training to reduce overfitting. The training stops at epoch 24, with a training accuracy of 96% and validation accuracy of 94%. The results of the training process are shown in the graph below: 
+The model is trained with a batch size of 16 and for 50 epochs. Early stopping and dropout is applied in this training to reduce overfitting. The training stops at epoch 40, with a training accuracy of 96% and validation accuracy of 94%. The results of the training process are shown in the graph below: 
 
 ![Train Acc vs Val Acc](images/train_acc_vs_val_acc.png)
 ![Train Loss vs Val Loss](images/train_loss_vs_val_loss.png)
