@@ -71,7 +71,7 @@ model.compile(optimizer='adam',loss='sparse_categorical_crossentropy',metrics=['
 # Initialize callbacks
 
 # EarlyStopping 
-es = EarlyStopping(patience=3,verbose=1,restore_best_weights=True)
+es = EarlyStopping(patience=5,verbose=1,restore_best_weights=True)
 
 # TensorBoard 
 PATH = "tb_logs"
@@ -79,7 +79,7 @@ LOG_PATH = os.path.join(PATH,'heart_disease',datetime.datetime.now().strftime("%
 tb= TensorBoard(log_dir=LOG_PATH)
 #%%
 # Model training
-BATCH_SIZE =16
+BATCH_SIZE = 16
 EPOCHS= 50
 history = model.fit(X_train, y_train, validation_data=(X_test,y_test),batch_size=BATCH_SIZE,epochs=EPOCHS,callbacks=[es,tb])
 #%%
