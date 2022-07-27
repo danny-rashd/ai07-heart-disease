@@ -22,13 +22,28 @@ A feedforward neural network is constructed that is catered for classification p
 
 ![Model Structure](images/model_1.png)
 
-The model is trained with a batch size of 16 and for 50 epochs. Early stopping and dropout is applied in this training to reduce overfitting. The training stops at epoch 40, with a training accuracy of 96% and validation accuracy of 94%. The results of the training process are shown in the graph below: 
+The model is trained with a batch size of 16 and for 50 epochs. Early stopping and dropout is applied in this training to reduce overfitting. The training stops at epoch 40, with a training accuracy of 96% and validation accuracy of 94%. The results of the training process are shown in the graph visualized by Matplotlib below: 
 
 ![Train Acc vs Val Acc](images/train_acc_vs_val_acc.png)
 ![Train Loss vs Val Loss](images/train_loss_vs_val_loss.png)
+
+These model also recorded TensorBoard logs to observe whether the model overfits or underfits,
+
+To open an embedded tensorboard viewer inside a notebook, copy the following into a code-cell:
+```
+%tensorboard --logdir images/tb_logs/heart_disease
+
+```
+
+The results recorded in the TensorBoard logs are shown in the screenshots below:
+
+![TB epoch  accuracy](images/tb_epoch_accuracy.png)
+![TB epoch loss](images/tb_epoch_loss.png)
+
 ## 4. Results
 
 Upon evaluating the model with test data, the model obtain the following test results, as shown in figure below:
 
 ![Train Test Results](images/train_test_results.png)
 
+Since both the train and test results have the accuracy above 90%, we can say that the model are very accurate.
