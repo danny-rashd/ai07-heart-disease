@@ -18,7 +18,7 @@ The data is first loaded and preprocessed to properly split them into features a
 
 ### 3.2 Model pipeline
 
-A feedforward neural network is constructed that is catered for classification problem. The structure of the model is fairly simple. Figure below shows the structure of the model.
+A feedforward neural network is constructed that is catered for classification problem. The structure of the model is fairly simple. Figure below shows the structure of the model:
 
 ![Model Structure](images/model_1.png)
 
@@ -35,7 +35,7 @@ To open an embedded tensorboard viewer inside a notebook, copy the following int
 
 ```
 
-The results recorded in the TensorBoard logs are shown in the screenshots below:
+The results recorded in the TensorBoard logs are shown in the images below:
 
 ![TB epoch  accuracy](images/tb_epoch_accuracy.png)
 ![TB epoch loss](images/tb_epoch_loss.png)
@@ -46,4 +46,4 @@ Upon evaluating the model with test data, the model obtain the following test re
 
 ![Train Test Results](images/train_test_results.png)
 
-Since both the train and test results have the accuracy above 90%, we can say that the model are very accurate.
+Since both the train and test results have an accuracy above 90%, we can say that the model are accurate.
