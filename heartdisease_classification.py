@@ -17,35 +17,33 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import os,datetime
-#%%
+
 # 2. Load data from csv
 data = pd.read_csv('dataset/heart.csv')
 data.head()
-#%%
+
 # 3. Check for missing values
 data.isna().sum()
-#%%
+
 labels = data['target']
 features = data.drop('target',axis=1)
 print("Heart Disease dataset has {} data points with {} variables each.".format(*data.shape))
 
-#%%
 print('===================Features===================')
 print(features.head())
 print('===================Labels===================')
 print(labels.head())
-#%%
+
 # Train test split
 SEED= 12345
 X_train, X_test, y_train,y_test= train_test_split(features,labels,test_size=0.2,random_state=SEED)
-#%%
+
 # Feature scaling
 scaler = StandardScaler()
 scaler.fit(X_train)
 X_train= scaler.transform(X_train)
 X_test = scaler.transform(X_test)
 
-#%%
 # Create sequential network using keras
 nClass = len(np.unique(y_test))
 nIn = X_test.shape[1]
@@ -65,9 +63,9 @@ model.add(layers.Dense(nClass, activation='softmax'))
 dot_img_file = 'images/model_1.png'
 plot_model(model, to_file=dot_img_file, show_shapes=True)
 model.summary()
-#%%
+
 model.compile(optimizer='adam',loss='sparse_categorical_crossentropy',metrics=['accuracy'])
-#%%
+
 # Initialize callbacks
 
 # EarlyStopping 
@@ -77,19 +75,19 @@ es = EarlyStopping(patience=5,verbose=1,restore_best_weights=True)
 PATH = "tb_logs"
 LOG_PATH = os.path.join(PATH,'heart_disease',datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
 tb= TensorBoard(log_dir=LOG_PATH)
-#%%
+
 # Model training
 BATCH_SIZE = 16
 EPOCHS= 50
 history = model.fit(X_train, y_train, validation_data=(X_test,y_test),batch_size=BATCH_SIZE,epochs=EPOCHS,callbacks=[es,tb])
-#%%
+
 # Model Evaluation
 # Train evaluation loss and accuracy
 print(f"Train Evaluation : \n { model.evaluate(X_train,y_train)}")
 
 # Test evaluation loss and accuracy
 print(f"Test Evaluation : \n { model.evaluate(X_test,y_test)}")
-#%%
+
 # 8. Visualize train and test results
 train_loss = history.history['loss']
 val_loss = history.history['val_loss']
