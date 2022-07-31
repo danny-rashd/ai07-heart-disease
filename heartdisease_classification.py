@@ -5,12 +5,10 @@ Author: danny.rashd
 Dataset: https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset
 """
 # 1. Import packages
-import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras import layers, callbacks
+from tensorflow.keras import layers
 from tensorflow.keras.callbacks import EarlyStopping, TensorBoard
 from tensorflow.keras.utils import plot_model
-from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import numpy as np
@@ -60,8 +58,8 @@ model.add(layers.Dense(16,activation='relu'))
 model.add(layers.Dropout(0.1))
 model.add(layers.Dense(8,activation='relu'))
 model.add(layers.Dense(nClass, activation='softmax'))
-dot_img_file = 'images/model_1.png'
-plot_model(model, to_file=dot_img_file, show_shapes=True)
+img_file = 'images/model_1.png'
+plot_model(model, to_file=img_file, show_shapes=True)
 model.summary()
 
 model.compile(optimizer='adam',loss='sparse_categorical_crossentropy',metrics=['accuracy'])
