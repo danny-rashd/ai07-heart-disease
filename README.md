@@ -47,3 +47,6 @@ Upon evaluating the model with test data, the model obtain the following test re
 ![Train Test Results](images/train_test_results.png)
 
 Since both the train and test results have an accuracy above 90%, we can say that the model are accurate.
+
+## Acknowledgements
+-  Kah Chun Kong - SHRDC Technical Instructor [![Github](https://img.shields.io/badge/Github-171515?style=flat-square&logo=github&logoColor=black)](https://github.com/ch4mploo/)
